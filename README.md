@@ -63,7 +63,6 @@ Salin `.env.example` ke `.env` dan sesuaikan nilai-nilai berikut:
 ```
 PORT=3000
 DATABASE_URL=postgresql://username:password@localhost:5432/
-JWT_SECRET=your_jwt_secret
 ```
 
 ## 🤝 Kontribusi
@@ -74,6 +73,3 @@ JWT_SECRET=your_jwt_secret
 4. Push ke branch (`git push origin feature/amazing-feature`)
 5. Buka Pull Request
 
-## 📝 Lisensi
-
-Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanjut.
