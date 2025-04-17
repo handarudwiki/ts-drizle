@@ -2,6 +2,7 @@ import { relations } from "drizzle-orm";
 import { decimal, numeric, pgTable, serial, timestamp } from "drizzle-orm/pg-core";
 import { integer } from "drizzle-orm/pg-core";
 import {  varchar } from "drizzle-orm/pg-core";
+import { InferInsertModel, InferSelectModel } from "drizzle-orm";
 
 export const product = pgTable("products", {
     id: serial().primaryKey(),
@@ -32,3 +33,9 @@ export const orderRelation = relations(order, ({ one }) => ({
 export const productRelation = relations(product, ({ many }) => ({
     orders: many(order),
 }));
+
+export type InsertProduct = InferInsertModel<typeof product>;
+export type SelectProduct = InferSelectModel<typeof product>;
+
+export type InsertOrder = InferInsertModel<typeof order>;
+export type SelectOrder = InferSelectModel<typeof order>;
